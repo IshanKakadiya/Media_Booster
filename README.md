@@ -1,16 +1,22 @@
-# audio_application
+# audio application
 
-A new Flutter project.
+Simple ***Intro APP*** Created with **Flutter Freamwork** And **Dart Language**
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Functionality
 
-A few resources to get you started if this is your first Flutter project:
+- Music Player
+- Fun With Music
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+--- 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots 
+
+<img src="https://user-images.githubusercontent.com/113764228/195589258-8789803e-5364-4579-b02a-9e073a7268b6.jpg" width="400"> &nbsp; 
+<img src="https://user-images.githubusercontent.com/113764228/195589264-64faeefa-06ac-45ce-b826-edbd27aa0720.jpg" width="400"> &nbsp; 
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at ishankakadiya7@gmail.com
+
