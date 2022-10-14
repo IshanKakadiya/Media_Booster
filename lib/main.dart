@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intro_screen/spalshScreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -55,7 +56,13 @@ class _MyAppState extends State<MyApp> {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: const Text("Wel-Come"),
+        child: Text(
+          "Wel-Come",
+          style: GoogleFonts.josefinSans(
+            fontSize: 40,
+            color: Colors.black.withOpacity(0.4),
+          ),
+        ),
       ),
     );
   }
