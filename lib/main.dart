@@ -27,6 +27,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  imageAdd() {
+    Globle.imageAddList = [];
+
+    for (int i = 0; i < Globle.allImageList.length; i++) {
+      if (Globle.allImageList[i]["category"] ==
+          Globle.dynamicUI[Globle.index]["name"]) {
+        Globle.imageAddList.add(Globle.allImageList[i]);
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
@@ -34,7 +45,7 @@ class _MyAppState extends State<MyApp> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Gallary App"),
+        title: const Text("Gallery App"),
         centerTitle: true,
       ),
       body: Padding(
@@ -43,17 +54,19 @@ class _MyAppState extends State<MyApp> {
           crossAxisCount: 2,
           mainAxisSpacing: 7,
           crossAxisSpacing: 7,
-          children: [
-            InkWell(
+          children: Globle.dynamicUI.map((e) {
+            int i = Globle.dynamicUI.indexOf(e);
+
+            return InkWell(
               onTap: () {
                 setState(() {
-                  Globle.index = 0;
+                  Globle.index = i;
+                  imageAdd();
                 });
                 Navigator.of(context).pushNamed("Slider_Page");
               },
               child: Container(
-                height: _height * 0.2,
-                width: _width * 0.5,
+                height: Globle.dynamicUI[i]["height"],
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
@@ -61,145 +74,39 @@ class _MyAppState extends State<MyApp> {
                   ),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage("${Globle.nature[0]}"),
+                    image: AssetImage("${Globle.dynamicUI[i]["path"]}"),
                   ),
                 ),
                 alignment: Alignment.center,
                 child: Text(
-                  "Nature",
+                  "${Globle.dynamicUI[i]["name"]}",
                   style: GoogleFonts.carterOne(
                     color: Colors.white.withOpacity(0.9),
                     letterSpacing: 1.2,
-                    fontSize: 30,
+                    fontSize: Globle.dynamicUI[i]["fontsize"],
+                    shadows: [
+                      const Shadow(
+                          // bottomLeft
+                          offset: Offset(-0.5, -0.5),
+                          color: Colors.black),
+                      const Shadow(
+                          // bottomRight
+                          offset: Offset(0.5, -0.5),
+                          color: Colors.black),
+                      const Shadow(
+                          // topRight
+                          offset: Offset(0.5, 0.5),
+                          color: Colors.black),
+                      const Shadow(
+                          // topLeft
+                          offset: Offset(-0.5, 0.5),
+                          color: Colors.black),
+                    ],
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                setState(() {
-                  Globle.index = 1;
-                });
-                Navigator.of(context).pushNamed("Slider_Page");
-              },
-              child: Container(
-                height: _height * 0.35,
-                width: _width * 0.5,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.9),
-                  ),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("${Globle.architecture[0]}"),
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  "Architecture",
-                  style: GoogleFonts.carterOne(
-                    color: Colors.white.withOpacity(0.9),
-                    letterSpacing: 1.2,
-                    fontSize: 22,
-                  ),
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                setState(() {
-                  Globle.index = 2;
-                });
-                Navigator.of(context).pushNamed("Slider_Page");
-              },
-              child: Container(
-                height: _height * 0.25,
-                width: _width * 0.5,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.9),
-                  ),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("${Globle.animal[0]}"),
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  "Animal",
-                  style: GoogleFonts.carterOne(
-                    color: Colors.white.withOpacity(0.9),
-                    letterSpacing: 1.2,
-                    fontSize: 30,
-                  ),
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                setState(() {
-                  Globle.index = 3;
-                });
-                Navigator.of(context).pushNamed("Slider_Page");
-              },
-              child: Container(
-                height: _height * 0.35,
-                width: _width * 0.5,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.9),
-                  ),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("${Globle.people[0]}"),
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  "People",
-                  style: GoogleFonts.carterOne(
-                    color: Colors.white.withOpacity(0.9),
-                    letterSpacing: 1.2,
-                    fontSize: 30,
-                  ),
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                setState(() {
-                  Globle.index = 4;
-                });
-                Navigator.of(context).pushNamed("Slider_Page");
-              },
-              child: Container(
-                height: _height * 0.33,
-                width: _width * 0.1,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.9),
-                  ),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("${Globle.renders_3d[0]}"),
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  "3D Render",
-                  style: GoogleFonts.carterOne(
-                    color: Colors.white.withOpacity(0.9),
-                    letterSpacing: 1.2,
-                    fontSize: 26,
-                  ),
-                ),
-              ),
-            ),
-          ],
+            );
+          }).toList(),
         ),
       ),
       backgroundColor: Colors.white.withOpacity(0.5),

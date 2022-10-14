@@ -17,32 +17,12 @@ class _Slider_PageState extends State<Slider_Page> {
 
   @override
   Widget build(BuildContext context) {
-    String name = "";
-    List allList = [];
-
-    if (Globle.index == 0) {
-      allList = Globle.nature;
-      name = "Nature";
-    } else if (Globle.index == 1) {
-      allList = Globle.architecture;
-      name = "Architecture";
-    } else if (Globle.index == 2) {
-      allList = Globle.animal;
-      name = "Animal";
-    } else if (Globle.index == 3) {
-      allList = Globle.people;
-      name = "People";
-    } else if (Globle.index == 4) {
-      allList = Globle.renders_3d;
-      name = "3D";
-    }
-
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("$name Slider"),
+        title: Text("${Globle.dynamicUI[Globle.index]["name"]} Slider"),
         centerTitle: true,
       ),
       body: Column(
@@ -66,14 +46,14 @@ class _Slider_PageState extends State<Slider_Page> {
                     currentindex = val;
                   });
                 }),
-            items: allList
+            items: Globle.imageAddList
                 .map(
                   (e) => Container(
                     width: _width,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(e),
+                        image: AssetImage("${e["path"]}"),
                       ),
                     ),
                   ),
@@ -83,8 +63,8 @@ class _Slider_PageState extends State<Slider_Page> {
           const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: allList.map((e) {
-              int i = allList.indexOf(e);
+            children: Globle.imageAddList.map((e) {
+              int i = Globle.imageAddList.indexOf(e);
 
               return Row(
                 children: [
