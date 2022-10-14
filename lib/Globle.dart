@@ -31,7 +31,7 @@ class Globle {
     {
       "fontsize": 26.0,
       "height": 264.0,
-      "name": "Renders_3d",
+      "name": "3D Renders",
       "path": "assets/3D_Renders/3D8.jpg"
     },
   ];
@@ -77,16 +77,16 @@ class Globle {
     {"path": "assets/People/people5.jpg", "category": "People"},
     {"path": "assets/People/people6.jpg", "category": "People"},
     {"path": "assets/People/people7.jpg", "category": "People"},
-    {"path": "assets/3D_Renders/3D8.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D7.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D6.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D5.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D4.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D3.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D2.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D1.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D9.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D10.jpg", "category": "Renders_3d"},
-    {"path": "assets/3D_Renders/3D11.jpg", "category": "Renders_3d"},
+    {"path": "assets/3D_Renders/3D8.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D7.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D6.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D5.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D4.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D3.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D2.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D1.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D9.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D10.jpg", "category": "3D Renders"},
+    {"path": "assets/3D_Renders/3D11.jpg", "category": "3D Renders"},
   ];
 }
