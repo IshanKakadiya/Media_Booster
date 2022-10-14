@@ -132,7 +132,7 @@ class _MyAppState extends State<MyApp> {
                     String emailRagister = prefs.getString("isEmail") ?? "";
                     String passwordRagister =
                         prefs.getString("isPassword") ?? "";
-                    String name = prefs.getString("isName") ?? "";
+                    Globle.name = prefs.getString("isName") ?? "";
                     print(name);
 
                     if (email == emailRagister &&
